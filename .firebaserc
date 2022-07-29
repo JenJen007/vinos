@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vinos-52dd5": {
+      "hosting": {
+        "vinos": [
+          "vinos-52dd5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vinos-52dd5"
+  }
+}

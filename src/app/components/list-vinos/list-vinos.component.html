@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Listado de Vinos</span>
+      <button class="btn btn-dark btn-lg float-end" routerLink="/create-vino">Agregar</button>
+      <h5 style="margin-top: 30px;" *ngIf="vinos.length == 0">No hay datos para mostrar</h5>
+      <div class="table table-responsive">
+        <table *ngIf="vinos.length > 0" class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Variedad</th>
+              <th>Cosecha</th>
+              <th>Línea</th>
+              <th>Código</th>
+              <th>Precio</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vino of vinos">
+              <td>{{vino.variedad}}</td>
+              <td>{{vino.cosecha}}</td>
+              <td>{{vino.linea}}</td>
+              <td>{{vino.codigo}}</td>
+              <td>{{vino.precio | currency}}</td>
+              <td>
+                <i class="fa-solid fa-pen-to-square fa-lg text-info me-md-2" [routerLink]="['/editVino/', vino.id]"></i>
+                <i (click)="eliminarVino(vino.id)" class="fa-solid fa-trash-can fa-lg text-danger"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
